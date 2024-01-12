@@ -1,21 +1,25 @@
 /Rock Paper Scissors Script/
 
+
 const selection = ["rock", "paper", "scissors"];
-let playerSelection = prompt('Do you choose rock, paper, scissors');
+let playerSelection = prompt('Do you choose rock, paper, scissors').toLowerCase();
 console.log(playerSelection);
 
 
 function getComputerChoice() {
     return(selection[(Math.floor(Math.random() * selection.length))]);
-    }
-getComputerChoice();
+}
 
-const computerSelection = getComputerChoice();
+let computerSelection = getComputerChoice();
 console.log(computerSelection);
 
 function compare(computerSelection, playerSelection) {
     if (computerSelection === playerSelection) {
-        return "The result is a tie!";
+        alert ("The result is a tie!");
+        playerSelection = prompt('Would you like to play again? rock,paper,scissors');
+        console.log(playerSelection);
+        computerSelection = getComputerChoice();
+        console.log(computerSelection);
     }
     if (computerSelection === "rock") {
         if (playerSelection === "scissors") {
